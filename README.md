@@ -111,7 +111,7 @@ Este proyecto está bajo la Licencia MIT - mira el archivo [LICENSE](LICENSE) pa
 
 **Harold-ESC**
 - Estudiante de Ciencias de la Computación en la Universidad Nacional de Colombia (Unal)
-- GitHub: [@tu-usuario](https://github.com/Harold-ESC)
+- GitHub: [@Harold-ESC](https://github.com/Harold-ESC)
 
 ---
 
