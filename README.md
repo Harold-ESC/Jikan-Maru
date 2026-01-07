@@ -1,8 +1,6 @@
-# Horario Circular Interactivo
+# Jikan-Maru (時間丸) Horario Circular Interactivo
 
-Aplicación web para visualizar y gestionar tu horario diario con una interfaz circular, perfecta para estudiantes y personas que buscan organizar su tiempo de forma visual y atractiva en su versión más visual y dinámica.
-
-![Preview](https://img.shields.io/badge/React-18-blue) ![Vite](https://img.shields.io/badge/Vite-5-purple) ![Tailwind](https://img.shields.io/badge/Tailwind-3-cyan)
+Aplicación web para visualizar y gestionar tu horario diario con una interfaz circular, perfecta para estudiantes y personas que buscan organizar su tiempo de forma visual y atractiva en su versión Maru más visual y dinámica.
 
 ## Características
 
@@ -14,11 +12,16 @@ Aplicación web para visualizar y gestionar tu horario diario con una interfaz c
 - **Diseño responsive** - Funciona en móvil, tablet y desktop
 - **Interfaz rápida y fluida** - Navegación instantánea entre días
 
-## Demo
+## Demo Visual
 
-<img width="358" height="937" alt="image" src="https://github.com/user-attachments/assets/55426fdc-92ea-44b8-bb24-4ea7088adf76" />
+Vista de Día
 
-<img width="331" height="739" alt="image" src="https://github.com/user-attachments/assets/8d4150a2-1c4d-45a3-8b9a-65d2af834db6" />
+<img width="401" height="815" alt="image" src="https://github.com/user-attachments/assets/4e3eeb47-423c-4937-93be-590f6657654b" />
+
+
+Vista de Noche
+
+<img width="395" height="811" alt="image" src="https://github.com/user-attachments/assets/d227bddc-9102-4140-b076-03337d55cd6b" />
 
 
 ## Instalación
@@ -42,13 +45,6 @@ npm run dev
 ```
 
 La aplicación estará disponible en `http://localhost:5173`
-
-## Scripts disponibles
-```bash
-npm run dev      # Inicia el servidor de desarrollo con HMR
-npm run build    # Crea la versión optimizada para producción
-npm run preview  # Vista previa de la versión de producción
-```
 
 ## Personalización
 
@@ -78,10 +74,6 @@ Este proyecto usa las siguientes tecnologías:
 - **Vite 5** - Build tool con HMR (Hot Module Replacement)
 - **Tailwind CSS 3** - Framework de CSS utility-first
 - **Lucide React** - Iconos modernos y ligeros
-
-### Configuración de Vite
-
-Este template usa `@vitejs/plugin-react` con Babel para Fast Refresh. Para más información sobre configuración avanzada, consulta la [documentación oficial de Vite](https://vitejs.dev/).
 
 ## Roadmap
 
