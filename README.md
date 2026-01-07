@@ -1,16 +1,110 @@
-# React + Vite
+# Jikan-Maru (時間丸) Horario Circular Interactivo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web para visualizar y gestionar tu horario diario con una interfaz circular, perfecta para estudiantes y personas que buscan organizar su tiempo de forma visual y atractiva en su versión Maru más visual y dinámica.
 
-Currently, two official plugins are available:
+## Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Visualización circular del horario** - Estilo "pie chart"
+- **Horarios personalizables** - Diferentes para cada día de la semana
+- **Tema dinámico día/noche** - Selecciona tu opción prefefrida: Auto → Light → Dark → Auto
+- **Sistema de recordatorios** - No olvides tus tareas importantes
+- **Actividad actual destacada** - Siempre sabes qué deberías estar haciendo
+- **Diseño responsive** - Funciona en móvil, tablet y desktop
+- **Interfaz rápida y fluida** - Navegación instantánea entre días
 
-## React Compiler
+## Demo Visual
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Vista de Día
 
-## Expanding the ESLint configuration
+<img width="401" height="815" alt="image" src="https://github.com/user-attachments/assets/4e3eeb47-423c-4937-93be-590f6657654b" />
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+Vista de Noche
+
+<img width="395" height="811" alt="image" src="https://github.com/user-attachments/assets/d227bddc-9102-4140-b076-03337d55cd6b" />
+
+
+## Instalación
+
+### Prerequisitos
+- Node.js 18+ y npm
+
+### Pasos
+```bash
+# 1. Clonar el repositorio
+git clone https://github.com/Harold-ESC/Jikan-Maru.git
+
+# 2. Entrar al directorio
+cd Jikan-Maru
+
+# 3. Instalar dependencias
+npm install
+
+# 4. Iniciar servidor de desarrollo
+npm run dev
+```
+
+La aplicación estará disponible en `http://localhost:5173`
+
+## Personalización
+
+### Modificar horarios
+
+Edita el objeto `schedules` en `src/App.jsx`:
+```javascript
+schedules: {
+  Lunes: [
+    { 
+      activity: '睡眠',           // Nombre de la actividad
+      color: '#4ade80',          // Color en hexadecimal
+      start: 0,                  // Hora de inicio (formato 24h)
+      end: 7,                    // Hora de fin
+      description: 'Descanso'    // Descripción detallada
+    },
+    // ... más actividades
+  ]
+}
+```
+
+## Tecnologías
+
+Este proyecto usa las siguientes tecnologías:
+
+- **React 18** - Biblioteca de UI
+- **Vite 5** - Build tool con HMR (Hot Module Replacement)
+- **Tailwind CSS 3** - Framework de CSS utility-first
+- **Lucide React** - Iconos modernos y ligeros
+
+## Roadmap
+
+- [ ] Editor visual de horarios
+- [ ] Implementacion de ambos estilos maru y sei bajan una misma app
+- [ ] Persistencia de datos con localStorage
+- [ ] Notificaciones del navegador
+- [ ] Estadísticas semanales
+- [ ] Exportar/importar configuraciones
+- [ ] Modo PWA (Progressive Web App)
+
+## Contribuciones
+
+Las contribuciones son bienvenidas. Si tienes ideas para mejorar la aplicación:
+
+1. Fork el proyecto
+2. Crea una rama (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT - mira el archivo [LICENSE](LICENSE) para más detalles.
+
+## Autor
+
+**Harold-ESC**
+- Estudiante de Ciencias de la Computación en la Universidad Nacional de Colombia (Unal)
+- GitHub: [@Harold-ESC](https://github.com/Harold-ESC)
+
+---
+
+Si te gusta este proyecto, ¡dale una estrella en GitHub!
