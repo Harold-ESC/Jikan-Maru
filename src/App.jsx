@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Clock, Calendar, Plus, Edit2, ChevronLeft, Bell } from 'lucide-react';
+import { Clock, Calendar, Plus, Edit2, ChevronLeft, Bell, Sun, Moon } from 'lucide-react';
 
 const ScheduleWheelApp = () => {
   const [currentDay, setCurrentDay] = useState('Lunes');
   const [currentTime, setCurrentTime] = useState(new Date());
   const [view, setView] = useState('main');
   const [selectedActivity, setSelectedActivity] = useState(null);
+  const [themeMode, setThemeMode] = useState('auto'); // 'auto', 'light', 'dark'
   const [schedules, setSchedules] = useState({
     Lunes: [
       { activity: '睡眠', color: '#4ade80', start: 0, end: 7, description: 'Descanso nocturno' },
@@ -51,6 +52,28 @@ const ScheduleWheelApp = () => {
     return hours >= 20 || hours < 6;
   };
 
+  const isDarkMode = () => {
+    if (themeMode === 'dark') return true;
+    if (themeMode === 'light') return false;
+    return isNightTime(); // modo auto
+  };
+
+  const toggleTheme = () => {
+    if (themeMode === 'auto') {
+      setThemeMode('light');
+    } else if (themeMode === 'light') {
+      setThemeMode('dark');
+    } else {
+      setThemeMode('auto');
+    }
+  };
+
+  const getThemeIcon = () => {
+    if (themeMode === 'auto') return;
+    if (themeMode === 'light') return;
+    return;
+  };
+
   const createPieChart = () => {
     const schedule = schedules[currentDay] || [];
     let currentAngle = -90;
@@ -93,19 +116,30 @@ const ScheduleWheelApp = () => {
   };
 
   const currentActivity = getCurrentActivity();
-  const bgColor = isNightTime() ? 'from-indigo-900 via-purple-900 to-pink-900' : 'from-blue-400 via-cyan-400 to-teal-400';
+  const bgColor = isDarkMode() ? 'from-indigo-900 via-purple-900 to-pink-900' : 'from-blue-400 via-cyan-400 to-teal-400';
 
   if (view === 'detail' && selectedActivity) {
     return (
       <div className={`min-h-screen bg-gradient-to-br ${bgColor} p-6 transition-all duration-1000`}>
         <div className="max-w-2xl mx-auto">
-          <button 
-            onClick={() => setView('main')}
-            className="mb-4 flex items-center gap-2 text-white bg-white/20 px-4 py-2 rounded-lg hover:bg-white/30 transition"
-          >
-            <ChevronLeft size={20} />
-            Volver
-          </button>
+          <div className="flex justify-between items-center mb-4">
+            <button 
+              onClick={() => setView('main')}
+              className="flex items-center gap-2 text-white bg-white/20 px-4 py-2 rounded-lg hover:bg-white/30 transition"
+            >
+              <ChevronLeft size={20} />
+              Volver
+            </button>
+            
+            <button
+              onClick={toggleTheme}
+              className="flex items-center gap-2 text-white bg-white/20 px-4 py-2 rounded-lg hover:bg-white/30 transition"
+              title={`Modo: ${themeMode === 'auto' ? 'Automático' : themeMode === 'light' ? 'Claro' : 'Oscuro'}`}
+            >
+              <span className="text-xl">{getThemeIcon()}</span>
+              <span className="text-sm capitalize">{themeMode}</span>
+            </button>
+          </div>
           
           <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 text-white">
             <div className="text-center mb-6">
@@ -124,7 +158,7 @@ const ScheduleWheelApp = () => {
               </div>
               
               <div className="bg-white/10 rounded-xl p-4">
-                <h3 className="text-lg font-semibold mb-2">Duración</h3>
+                <h3 className="text-lg font-semibold mb-2">⏱Duración</h3>
                 <p className="text-lg">{selectedActivity.end - selectedActivity.start} horas</p>
               </div>
               
@@ -148,7 +182,20 @@ const ScheduleWheelApp = () => {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8 text-white">
-          <h1 className="text-4xl font-bold mb-2">Mi Horario Circular</h1>
+          <div className="flex justify-between items-start mb-4">
+            <div className="flex-1"></div>
+            <h1 className="text-4xl font-bold flex-1">Mi Horario Circular</h1>
+            <div className="flex-1 flex justify-end">
+              <button
+                onClick={toggleTheme}
+                className="flex items-center gap-2 bg-white/20 px-4 py-2 rounded-lg hover:bg-white/30 transition backdrop-blur-sm"
+                title={`Modo: ${themeMode === 'auto' ? 'Automático' : themeMode === 'light' ? 'Claro' : 'Oscuro'}`}
+              >
+                <span className="text-xl">{getThemeIcon()}</span>
+                <span className="text-sm capitalize">{themeMode}</span>
+              </button>
+            </div>
+          </div>
           <div className="flex items-center justify-center gap-2 text-lg">
             <Clock size={24} />
             <span>{currentTime.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })}</span>
