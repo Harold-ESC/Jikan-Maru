@@ -158,7 +158,7 @@ const ScheduleWheelApp = () => {
               </div>
               
               <div className="bg-white/10 rounded-xl p-4">
-                <h3 className="text-lg font-semibold mb-2">⏱Duración</h3>
+                <h3 className="text-lg font-semibold mb-2">Duración</h3>
                 <p className="text-lg">{selectedActivity.end - selectedActivity.start} horas</p>
               </div>
               
@@ -184,7 +184,7 @@ const ScheduleWheelApp = () => {
         <div className="text-center mb-8 text-white">
           <div className="flex justify-between items-start mb-4">
             <div className="flex-1"></div>
-            <h1 className="text-4xl font-bold flex-1">Mi Horario Circular</h1>
+            <h1 className="text-4xl font-bold flex-1">Horario</h1>
             <div className="flex-1 flex justify-end">
               <button
                 onClick={toggleTheme}
@@ -203,20 +203,74 @@ const ScheduleWheelApp = () => {
         </div>
 
         {/* Day selector */}
-        <div className="flex gap-2 mb-6 overflow-x-auto pb-2 justify-center">
-          {days.map(day => (
-            <button
-              key={day}
-              onClick={() => setCurrentDay(day)}
-              className={`px-4 py-2 rounded-lg font-medium transition whitespace-nowrap ${
-                currentDay === day 
-                  ? 'bg-white text-indigo-900' 
-                  : 'bg-white/20 text-white hover:bg-white/30'
-              }`}
-            >
-              {day}
-            </button>
-          ))}
+        {/* Componente unificado con feedback visual */}
+        <div className="w-full">
+          {/* Versión móvil */}
+          <div className="block sm:hidden">
+            <div className="grid grid-cols-7 gap-1.5 mb-1.5 px-3">
+              {days.map(day => {
+                const isActive = currentDay === day;
+                
+                return (
+                  <div key={day} className="relative pb-3">
+                    <button
+                      onClick={() => setCurrentDay(day)}
+                      className={`
+                        w-full aspect-square rounded-xl font-medium transition-all
+                        flex items-center justify-center text-base relative z-10
+                        ${isActive 
+                          ? 'bg-gradient-to-br from-white to-gray-100 text-indigo-900 font-bold shadow-lg' 
+                          : 'bg-white/10 text-white hover:bg-white/20'
+                        }
+                      `}
+                    >
+                      {day.toLowerCase().includes('martes') ? 'M' : 
+                      day.toLowerCase().includes('miércoles') ? 'X' : 
+                      day.charAt(0)}
+                    </button>
+                    
+                    {/* Indicador activo: SOLO EN MÓVIL */}
+                    {isActive && (
+                      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-5 h-1 bg-white rounded-full"></div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+            
+            <div className="text-center text-white/90 font-semibold text-sm px-4 mb-2 tracking-wider uppercase">
+              {currentDay}
+            </div>
+          </div>
+          
+          {/* Versión Escritorio */}
+          <div className="hidden sm:block">
+            <div className="grid sm:grid-cols-7 gap-3 mb-4 px-4 max-w-5xl mx-auto">
+              {days.map(day => {
+                const isActive = currentDay === day;
+                
+                return (
+                  <div key={day} className="relative group">
+                    <button
+                      onClick={() => setCurrentDay(day)}
+                      className={`
+                        w-full py-3 rounded-xl font-medium transition-all duration-200
+                        text-center relative z-10
+                        ${isActive 
+                          ? 'bg-gradient-to-b from-white to-gray-50 text-indigo-900 font-bold shadow-xl scale-105' 
+                          : 'bg-white/10 text-white hover:bg-white/20 hover:shadow-md'
+                        }
+                      `}
+                    >
+                      <span className={isActive ? 'text-indigo-900' : 'text-white'}>
+                        {day}
+                      </span>
+                    </button>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-6">
