@@ -14,14 +14,16 @@ Aplicación web para visualizar y gestionar tu horario diario con una interfaz c
 
 ## Demo Visual
 
-Vista de Día
+Vista de Día (Formato escritorio)
 
-<img width="401" height="815" alt="image" src="https://github.com/user-attachments/assets/4e3eeb47-423c-4937-93be-590f6657654b" />
+<img width="1236" height="910" alt="image" src="https://github.com/user-attachments/assets/9f3a6fdc-2ea0-475a-951b-ad5c5ebf49e0" />
 
 
-Vista de Noche
 
-<img width="395" height="811" alt="image" src="https://github.com/user-attachments/assets/d227bddc-9102-4140-b076-03337d55cd6b" />
+Vista de Noche (Formato móvil)
+
+<img width="417" height="760" alt="image" src="https://github.com/user-attachments/assets/fc54b441-fca6-45d7-8a05-a5ac9bcadbdf" />
+
 
 
 ## Instalación
