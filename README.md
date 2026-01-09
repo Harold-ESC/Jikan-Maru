@@ -46,15 +46,15 @@ npm install
 npm run dev
 ```
 
-La aplicación estará disponible en `http://localhost:5173`
+La aplicación estará disponible en `http://localhost:4000`
 
 ## Personalización
 
 ### Modificar horarios
 
-Edita el objeto `schedules` en `src/App.jsx`:
+Edita el objeto `schedules` en `src/hooks/index.js`:
 ```javascript
-schedules: {
+export const INITIAL_SCHEDULES = {
   Lunes: [
     { 
       activity: '睡眠',           // Nombre de la actividad
