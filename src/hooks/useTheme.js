@@ -1,0 +1,60 @@
+/**
+ * Hook useTheme
+ * 
+ * Gestiona la lógica del tema (automático, claro, oscuro) y proporciona
+ * utilidades relacionadas.
+ * 
+ * @returns {Object} Estado y funciones del tema
+ */
+
+import { useState } from 'react';
+
+export const useTheme = () => {
+  const [themeMode, setThemeMode] = useState('auto');
+
+  /**
+   * Determina si es noche basado en la hora actual
+   * @returns {boolean} True si es noche
+   */
+  const isNightTime = () => {
+    const hours = new Date().getHours();
+    return hours >= 20 || hours < 6;
+  };
+
+  /**
+   * Determina si el modo oscuro está activo
+   * @returns {boolean} True si modo oscuro activo
+   */
+  const isDarkMode = () => {
+    if (themeMode === 'dark') return true;
+    if (themeMode === 'light') return false;
+    return isNightTime(); // modo auto
+  };
+
+  /**
+   * Cambia al siguiente modo de tema
+   */
+  const toggleTheme = () => {
+    setThemeMode(prev => {
+      if (prev === 'auto') return 'light';
+      if (prev === 'light') return 'dark';
+      return 'auto';
+    });
+  };
+
+  /**
+   * Obtiene la clase de gradient según el tema
+   * @returns {string} Clase Tailwind CSS
+   */
+  const bgColor = isDarkMode()
+    ? 'from-indigo-900 via-purple-900 to-pink-900'
+    : 'from-blue-400 via-cyan-400 to-teal-400';
+
+  return {
+    themeMode,
+    toggleTheme,
+    isDarkMode,
+    bgColor,
+    isNightTime
+  };
+};

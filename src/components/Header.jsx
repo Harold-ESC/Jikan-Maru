@@ -1,0 +1,43 @@
+/**
+ * Header Component
+ * 
+ * Encabezado de la aplicación con título, hora actual y control de tema.
+ * 
+ * @component
+ * @param {Object} props - Props del componente
+ * @param {Date} props.currentTime - Hora actual
+ * @param {string} props.themeMode - Modo de tema actual
+ * @param {Function} props.onToggleTheme - Callback para cambiar tema
+ * @returns {JSX.Element} Encabezado de la aplicación
+ */
+
+import { Clock } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
+
+const Header = ({ currentTime, themeMode, onToggleTheme }) => {
+  const timeString = currentTime.toLocaleTimeString('es-ES', {
+    hour: '2-digit',
+    minute: '2-digit'
+  });
+
+  return (
+    <div className="text-center mb-8 text-white">
+      <div className="flex justify-between items-start mb-4">
+        <div className="flex-1" />
+        <h1 className="text-4xl font-bold flex-1">Mi Horario Circular</h1>
+        <div className="flex-1 flex justify-end">
+          <ThemeToggle
+            themeMode={themeMode}
+            onToggle={onToggleTheme}
+          />
+        </div>
+      </div>
+      <div className="flex items-center justify-center gap-2 text-lg">
+        <Clock size={24} />
+        <span>{timeString}</span>
+      </div>
+    </div>
+  );
+};
+
+export default Header;
