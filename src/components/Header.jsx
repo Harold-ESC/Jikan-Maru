@@ -18,7 +18,7 @@ const Header = ({ currentTime, themeMode, onToggleTheme }) => {
     <div className="text-center mb-8 text-white">
       <div className="flex justify-between items-start mb-4">
         <div className="flex-1" />
-        <h1 className="text-4xl font-bold flex-1">Mi Horario Circular</h1>
+        <h1 className="text-4xl font-bold flex-1">Jikan Maru</h1>
         <div className="flex-1 flex justify-end">
           <ThemeToggle
             themeMode={themeMode}
