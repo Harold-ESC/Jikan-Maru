@@ -4,19 +4,10 @@
  * Renderiza un gráfico circular (rueda de horario) basado en 
  * las actividades programadas. 
  * 
- * @component
- * @param {Object} props - Props del componente
- * @param {Array} props.schedule - Array de actividades
- * @param {string} props.currentDay - Día actual seleccionado
- * @param {Function} props.onActivitySelect - Callback al seleccionar actividad
- * @returns {JSX.Element} SVG con el gráfico circular
  */
 
 const PieChart = ({ schedule, currentDay, onActivitySelect }) => {
-  /**
-   * Genera los segmentos del gráfico circular
-   * @returns {Array} Array de elementos SVG
-   */
+  // Genera los segmentos del gráfico circular
   const createPieChart = () => {
     let currentAngle = -90;
 

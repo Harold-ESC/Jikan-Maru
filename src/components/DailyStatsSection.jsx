@@ -3,10 +3,6 @@
  * 
  * Sección de estadísticas diarias del horario.
  * 
- * @component
- * @param {Object} props - Props del componente
- * @param {Array} props.schedule - Array de actividades del día
- * @returns {JSX.Element} Sección de estadísticas
  */
 
 import { BarChart3 } from 'lucide-react';

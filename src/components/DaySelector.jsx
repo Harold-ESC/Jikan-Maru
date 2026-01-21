@@ -2,13 +2,7 @@
  * DaySelector Component
  * 
  * Selector de días de la semana con navegación horizontal.
- * 
- * @component
- * @param {Object} props - Props del componente
- * @param {Array} props.days - Array de nombres de días
- * @param {string} props.currentDay - Día seleccionado actualmente
- * @param {Function} props.onSelectDay - Callback al seleccionar día
- * @returns {JSX.Element} Botones de navegación de días
+ * s
  */
 
 const DaySelector = ({ days, currentDay, onSelectDay }) => {

@@ -3,12 +3,6 @@
  * 
  * Encabezado de la aplicación con título, hora actual y control de tema.
  * 
- * @component
- * @param {Object} props - Props del componente
- * @param {Date} props.currentTime - Hora actual
- * @param {string} props.themeMode - Modo de tema actual
- * @param {Function} props.onToggleTheme - Callback para cambiar tema
- * @returns {JSX.Element} Encabezado de la aplicación
  */
 
 import { Clock } from 'lucide-react';

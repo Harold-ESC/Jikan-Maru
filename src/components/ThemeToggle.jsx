@@ -3,11 +3,6 @@
  * 
  * Botón para cambiar entre modos de tema (automático, claro, oscuro).
  * 
- * @component
- * @param {Object} props - Props del componente
- * @param {string} props.themeMode - Modo de tema actual
- * @param {Function} props.onToggle - Callback al cambiar tema
- * @returns {JSX.Element} Botón de control de tema
  */
 
 import { Sun, Moon } from 'lucide-react';

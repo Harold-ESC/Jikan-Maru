@@ -3,10 +3,6 @@
  * 
  * Tarjeta que muestra la actividad actual del día.
  * 
- * @component
- * @param {Object} props - Props del componente
- * @param {Object} props.activity - Actividad actual
- * @returns {JSX.Element} Tarjeta de actividad actual
  */
 
 import { Calendar } from 'lucide-react';

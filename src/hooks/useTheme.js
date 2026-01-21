@@ -4,7 +4,6 @@
  * Gestiona la lógica del tema (automático, claro, oscuro) y proporciona
  * utilidades relacionadas.
  * 
- * @returns {Object} Estado y funciones del tema
  */
 
 import { useState } from 'react';

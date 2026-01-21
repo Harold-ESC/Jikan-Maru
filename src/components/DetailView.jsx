@@ -4,15 +4,6 @@
  * Vista detallada de una actividad seleccionada con información
  * completa, descripción y notas personales.
  * 
- * @component
- * @param {Object} props - Props del componente
- * @param {Object} props.activity - Actividad a mostrar
- * @param {string} props.day - Día de la actividad
- * @param {string} props.bgColor - Clase de gradient de fondo
- * @param {string} props.themeMode - Modo de tema actual
- * @param {Function} props.onBack - Callback para volver
- * @param {Function} props.onToggleTheme - Callback para cambiar tema
- * @returns {JSX.Element} Vista detallada de actividad
  */
 
 import React from 'react';
@@ -73,7 +64,7 @@ const DetailView = ({
 
             {/* Duración */}
             <div className="bg-white/10 rounded-xl p-4">
-              <h3 className="text-lg font-semibold mb-2">⏱ Duración</h3>
+              <h3 className="text-lg font-semibold mb-2">Duración</h3>
               <p className="text-lg">{activity.end - activity.start} horas</p>
             </div>
 

@@ -3,11 +3,6 @@
  * 
  * Sección de recordatorios con lista y opción para añadir nuevos.
  * 
- * @component
- * @param {Object} props - Props del componente
- * @param {Array} props.reminders - Array de recordatorios
- * @param {Function} props.onAddReminder - Callback para añadir recordatorio
- * @returns {JSX.Element} Sección de recordatorios
  */
 
 import { Bell, Plus } from 'lucide-react';

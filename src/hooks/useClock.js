@@ -3,7 +3,6 @@
  * 
  * Gestiona la actualización de la hora actual cada minuto.
  * 
- * @returns {Date} Hora actual
  */
 
 import { useState, useEffect } from 'react';

@@ -4,8 +4,6 @@
  * Aplicación de horario circular que permite visualizar y gestionar
  * actividades diarias en un formato de rueda visual.
  * 
- * @component
- * @returns {JSX.Element} Componente principal de la aplicación
  */
 
 import React, { useState, useEffect } from 'react';
@@ -52,7 +50,6 @@ const ScheduleWheelApp = () => {
 
   /**
    * Maneja la selección de una actividad para ver detalles
-   * @param {Object} activity - Actividad seleccionada
    */
   const handleActivitySelect = (activity) => {
     setSelectedActivity(activity);
